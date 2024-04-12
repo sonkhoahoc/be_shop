@@ -17,6 +17,7 @@ var contexOptions = new DbContextOptionsBuilder<ApplicationContext>().UseSqlServ
 builder.Services.AddDbContext<ApplicationContext>(x => x.UseSqlServer(connectionString));
 //Add các irepository và repository
 builder.Services.AddTransient<IUserRepository, UserRepository>();
+builder.Services.AddTransient<ICustomerRepository, CustomerRepository>();
 builder.Services.AddTransient<IProductRepository, ProductRepository>();
 
 

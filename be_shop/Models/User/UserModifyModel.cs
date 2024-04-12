@@ -30,6 +30,5 @@ namespace be_shop.Models.User
         public byte type { set; get; }
         public long userAdded { set; get; }
         public long? userUpdated { set; get; }
-
     }
 }

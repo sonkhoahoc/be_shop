@@ -157,6 +157,31 @@ namespace be_shop.Controllers
             }
         }
 
+        [HttpPost("admin-user-changepass")]
+        public async Task<IActionResult> ChecChangePassUser(ChangePassModel model)
+        {
+            try
+            {
+                var user = await _userRepository.ChangePassUser(model);
+
+                return Ok(new ResponseSingleContentModel<string>
+                {
+                    StatusCode = 200,
+                    Message = "Đổi mật khẩu thành công",
+                    Data = null
+                });
+            }
+            catch (Exception)
+            {
+                return Ok(new ResponseSingleContentModel<string>
+                {
+                    StatusCode = 500,
+                    Message = "Có lỗi xảy ra trong quá trình xử lý",
+                    Data = string.Empty
+                });
+            }
+        }
+
         [AllowAnonymous]
         [HttpPost("admin-user-login")]
         public async Task<IActionResult> Login(LoginModel login)

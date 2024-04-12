@@ -24,6 +24,5 @@ namespace be_shop.Models.User
         public bool is_active { set; get; }
         public long userAdded { set; get; }
         public long? userUpdated { set; get; }
-
     }
 }
